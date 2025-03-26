@@ -3,6 +3,7 @@ using UnityEngine;
 public class ClickableBlock : MonoBehaviour
 {
     public GameObject block;
+    public BlockSideProcessor blockSideProcessor;
 
     // Update is called once per frame
     void Update()
@@ -14,6 +15,7 @@ public class ClickableBlock : MonoBehaviour
 
             if (result != null) {
                 block = result;
+                blockSideProcessor.CheckBlockSides(block);
             }
 
         }
@@ -32,6 +34,7 @@ public class ClickableBlock : MonoBehaviour
                 
                 if (result != null) {
                     block = result;
+                    blockSideProcessor.CheckBlockSides(block);
                 }
             }
         }

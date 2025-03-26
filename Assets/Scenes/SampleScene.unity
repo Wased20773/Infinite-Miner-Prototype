@@ -1138,8 +1138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPref: {fileID: 7105907347309566838, guid: e20f335e87ed0d94983d1a4e1f855819, type: 3}
-  baseWidth: 5
-  baseHeight: 5
+  baseWidth: 7
+  baseHeight: 7
   gap: 0.25
   spriteVisible: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   spriteHidden: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
@@ -1228,6 +1228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361210683}
   - component: {fileID: 1361210684}
+  - component: {fileID: 1361210685}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1263,6 +1264,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 0}
+  blockSideProcessor: {fileID: 1361210685}
+--- !u!114 &1361210685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361210682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa583129e675f64ab1a782f31958744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkDistance: 1
+  blockLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  spriteVisible: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
 --- !u!1 &2002071012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,7 +1444,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 121195001}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.6100001
+  m_Size: 0.61
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
