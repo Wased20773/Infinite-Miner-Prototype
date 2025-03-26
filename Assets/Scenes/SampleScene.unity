@@ -1138,9 +1138,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockPref: {fileID: 7105907347309566838, guid: e20f335e87ed0d94983d1a4e1f855819, type: 3}
-  baseWidth: 2
-  baseHeight: 1
+  baseWidth: 5
+  baseHeight: 5
   gap: 0.25
+  spriteVisible: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  spriteHidden: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
 --- !u!1 &1309528789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1425,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 121195001}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.61
+  m_Size: 0.6100001
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
