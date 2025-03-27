@@ -9,13 +9,22 @@ public class ClickableBlock : MonoBehaviour
     void Update()
     {
         // Mouse Click
-        if (Input.GetMouseButtonUp(0)) {
+        if (Input.GetMouseButtonUp(0) ) {
             Debug.Log("Mouse Click 0");
             GameObject result = GetBlockClicked(Input.mousePosition);
 
             if (result != null) {
                 block = result;
-                blockSideProcessor.CheckBlockSides(block);
+                BlockProperties blockProperties = block.GetComponent<BlockProperties>();
+                if (blockProperties.getVisibility() != false) {
+                    // Check sides for visibility
+                    blockSideProcessor.CheckBlockSides(block);
+
+                    // Destory the block
+                    if (block != null) {
+                        Destroy(block);
+                    }
+                }
             }
 
         }
@@ -34,15 +43,21 @@ public class ClickableBlock : MonoBehaviour
                 
                 if (result != null) {
                     block = result;
-                    blockSideProcessor.CheckBlockSides(block);
+                    BlockProperties blockProperties = block.GetComponent<BlockProperties>();
+                    if (blockProperties.getVisibility() != false) {
+                        // Check sides for visibility
+                        blockSideProcessor.CheckBlockSides(block);
+
+                        // Destory the block
+                        if (block != null) {
+                            Destroy(block);
+                        }
+                    }
                 }
             }
         }
 
-        // Destory the block
-        if (block != null) {
-            Destroy(block);
-        }
+
     }
 
     GameObject GetBlockClicked(Vector2 position)

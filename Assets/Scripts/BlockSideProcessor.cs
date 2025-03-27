@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class BlockSideProcessor : MonoBehaviour
 {
-    public float checkDistance = 1.05f;
+    public float checkDistance = 1.15f;
     public LayerMask blockLayer;
 
-    // For rendering
-    public Sprite spriteVisible;
 
     public void CheckBlockSides(GameObject block)
     {
@@ -31,9 +29,8 @@ public class BlockSideProcessor : MonoBehaviour
                 Debug.Log("Side: " + direction);
 
                 GameObject sideBlock = hit.collider.gameObject;
-                SpriteRenderer sprite = sideBlock.GetComponent<SpriteRenderer>();
-                sprite.sprite = spriteVisible;
-                sprite.color = Color.white;
+                BlockProperties blockProperties = sideBlock.GetComponent<BlockProperties>();
+                blockProperties.RevealBlock();
             }
 
         }

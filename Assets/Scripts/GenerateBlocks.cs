@@ -1,15 +1,19 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GenerateBlocks : MonoBehaviour
 {
+    /* ----- For Blocks ----- */
     public GameObject blockPref;
     public float baseWidth = 7f;
     public float baseHeight = 7f;
     public float gap = 0.25f;
+    public List<string> oreTypeList = new List<string>(); 
+    
 
-    // For rendering
-    public Sprite spriteVisible;
-    public Sprite spriteHidden;
+    /* ----- For Ores ----- */
+    public List<string> orePool = new List<string>(); 
+    public int orePoolSize;
 
     public void GenerateBlocksInRows() {
         // Get the block size
@@ -26,19 +30,15 @@ public class GenerateBlocks : MonoBehaviour
         Vector2 blockPosition = startPosition;
         for (int row = 0; row < baseHeight; ++row) { // Check per row
             for (int column = 0; column < baseWidth; ++column) { // Check per column
+                // Generate the block
                 GameObject currentBlock = Instantiate(blockPref, blockPosition, Quaternion.identity);
-                
-                // Check for visibility
-                SpriteRenderer sprite = currentBlock.GetComponent<SpriteRenderer>();
 
-                // Check for visibility
-                if (row == 0) { // if it's the first row...
-                    sprite.sprite = spriteVisible;
-                }
-                else { // else the rest of the rows are hidden
-                    sprite.sprite = spriteHidden;
-                    sprite.color = Color.grey;
-                }
+                // Initialize Block
+                BlockProperties blockProperties = currentBlock.GetComponent<BlockProperties>();
+                blockProperties.InitilizeBlock(row, null, null);
+                // Check chances with ore pool
+
+
 
                 blockPosition.x += blockWidth + gap;
             }

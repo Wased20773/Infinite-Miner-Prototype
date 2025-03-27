@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 1096950538}
   - component: {fileID: 1096950541}
   m_Layer: 5
-  m_Name: Generate Blocks
+  m_Name: (button) Generate Blocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1140,9 +1140,10 @@ MonoBehaviour:
   blockPref: {fileID: 7105907347309566838, guid: e20f335e87ed0d94983d1a4e1f855819, type: 3}
   baseWidth: 7
   baseHeight: 7
-  gap: 0.25
-  spriteVisible: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  spriteHidden: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  gap: 0
+  oreTypeList: []
+  orePool: []
+  orePoolSize: 0
 --- !u!1 &1309528789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,7 +1282,6 @@ MonoBehaviour:
   blockLayer:
     serializedVersion: 2
     m_Bits: 8
-  spriteVisible: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
 --- !u!1 &2002071012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 121195001}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.61
+  m_Size: 0.60999995
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
