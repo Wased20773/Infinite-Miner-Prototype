@@ -31,10 +31,10 @@ public class BlockProperties : MonoBehaviour
         InitializeVisibility(row);
 
         // Generate Ore
-        InitializeOre(ore);
+        InitializeOre(row, ore);
 
         // Generate Block Type
-        InitializeBlock(block);
+        InitializeBlock(row, block);
         
     }
 
@@ -49,25 +49,31 @@ public class BlockProperties : MonoBehaviour
         oreType = spriteHidden.name;
     }
 
-    private void InitializeOre(Sprite ore)
+    private void InitializeOre(int row, Sprite ore)
     {
-        if (ore != null) {
+        if (ore != null && row != 0) {
             oreSprite.sprite = ore;
+            oreSprite.color = Color.red;
         }
         
     }
 
-    private void InitializeBlock(Sprite block)
+    private void InitializeBlock(int row, Sprite block)
     {
-        blockSprite.sprite = block;
+        blockSprite.sprite = spriteHidden;
+        if (row == 0) {
+            blockSprite.color = Color.green;
+        }
+        else {
+            blockSprite.color = Color.yellow;
+        }
+
     }
 
     public void RevealBlock()
     {
         isVisible = true;
-        visibilitySprite.sprite = spriteHidden;
-        visibilitySprite.color = Color.white;
-
+        visibilitySprite.sprite = null;
     }
     
     public void HideBlock()

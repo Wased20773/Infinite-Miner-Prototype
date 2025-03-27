@@ -184,9 +184,9 @@ MonoBehaviour:
   blockType: 
   oreType: 
   isVisible: 0
-  blockSprite: {fileID: 3167554401680531991}
-  oreSprite: {fileID: 3770492450808092066}
   visibilitySprite: {fileID: 3792701345600349280}
+  oreSprite: {fileID: 3770492450808092066}
+  blockSprite: {fileID: 3167554401680531991}
   spriteHidden: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
 --- !u!1 &7349135857311438146
 GameObject:

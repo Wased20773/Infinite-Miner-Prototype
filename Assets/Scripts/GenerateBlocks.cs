@@ -8,14 +8,21 @@ public class GenerateBlocks : MonoBehaviour
     public float baseWidth = 7f;
     public float baseHeight = 7f;
     public float gap = 0.25f;
-    public List<string> oreTypeList = new List<string>(); 
+    public List<Sprite> oreTypeList = new List<Sprite>(); 
     
 
     /* ----- For Ores ----- */
-    public List<string> orePool = new List<string>(); 
+    public List<Sprite> orePool = new List<Sprite>(); 
     public int orePoolSize;
 
     public void GenerateBlocksInRows() {
+        /* ----- Generating orePool -----*/
+        orePool.Clear(); // reset pool
+        for (int i = 0; i < orePoolSize; i++) {
+            orePool.Add(oreTypeList[i]);
+        } 
+
+        /* ----- Generating Block -----*/
         // Get the block size
         float blockWidth = blockPref.transform.localScale.x;
         float blockHeight = blockPref.transform.localScale.y;
@@ -35,7 +42,7 @@ public class GenerateBlocks : MonoBehaviour
 
                 // Initialize Block
                 BlockProperties blockProperties = currentBlock.GetComponent<BlockProperties>();
-                blockProperties.InitilizeBlock(row, null, null);
+                blockProperties.InitilizeBlock(row, orePool[0], null);
                 // Check chances with ore pool
 
 

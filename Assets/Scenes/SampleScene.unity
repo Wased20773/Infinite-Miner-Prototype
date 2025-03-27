@@ -1141,9 +1141,14 @@ MonoBehaviour:
   baseWidth: 7
   baseHeight: 7
   gap: 0
-  oreTypeList: []
+  oreTypeList:
+  - {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  - {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  - {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  - {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  - {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   orePool: []
-  orePoolSize: 0
+  orePoolSize: 2
 --- !u!1 &1309528789
 GameObject:
   m_ObjectHideFlags: 0
